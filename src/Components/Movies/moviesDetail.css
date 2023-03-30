@@ -1,0 +1,5 @@
+.movie-container {
+  display: flex;
+  justify-content: center;
+  background-image: url(https://images.frandroid.com/wp-content/uploads/2022/10/netflix-octobre-contenus-2022.jpg);
+}

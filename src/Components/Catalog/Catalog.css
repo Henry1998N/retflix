@@ -1,0 +1,39 @@
+.Container {
+  background-size: cover;
+  background-image: url(https://www.phoneworld.com.pk/wp-content/uploads/2020/10/seo-watch-free-link-preview.jpg);
+  display: grid;
+  justify-content: flex-start;
+  justify-self: center;
+}
+.rentedHeader {
+  margin-top: 40px;
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+}
+.catalogHeader {
+  margin-top: 100px;
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+}
+.budget {
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  font-family: cursive;
+}

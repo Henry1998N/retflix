@@ -1,0 +1,14 @@
+.users-container {
+  display: grid;
+  justify-content: center;
+}
+.user-header {
+  color: white;
+  position: relative;
+  align-self: center;
+  margin-bottom: 50px;
+}
+.user-name {
+  text-align: center;
+  font-size: 30px;
+}
