@@ -17,22 +17,26 @@ function App() {
       newMovies[movieIndex].isRented = !newMovies[movieIndex].isRented;
       setBudget(newBudget);
     } else {
-      alert("you're out of budegrt");
+      alert("you're out of budget");
     }
     return newMovies;
   };
-  const rentMovie = function (movieId) {
-    let newMovies = [...movies];
-    let movieIndex = newMovies.findIndex((movie) => movieId == movie.id);
-
+  const isMovieRented = function (newMovies, movieIndex) {
     if (newMovies[movieIndex].isRented) {
       let newBudget = budget + 30;
       newMovies[movieIndex].isRented = !newMovies[movieIndex].isRented;
       setBudget(newBudget);
+      return newMovies;
     } else {
       let newBudget = budget - 30;
       newMovies = checkBudget(newMovies, movieIndex, newBudget);
+      return newMovies;
     }
+  };
+  const rentMovie = function (movieId) {
+    let newMovies = [...movies];
+    let movieIndex = newMovies.findIndex((movie) => movieId == movie.id);
+    newMovies = isMovieRented(newMovies, movieIndex);
     setMovies(newMovies);
   };
   return (

@@ -7,9 +7,6 @@ export default function MovieDetail({ movies }) {
   const movie = movies.find((m) => m.id == movieId);
   return (
     <div className="movie-container">
-      <br />
-      <br />
-      <br />
       <div>
         <Card style={{ width: "500px" }}>
           <Card.Header>

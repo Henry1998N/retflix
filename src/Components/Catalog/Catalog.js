@@ -16,7 +16,13 @@ export default function Catalog({ movies, rentMovie, budget }) {
     );
   };
   const getRentedMovies = function () {
-    return movies.filter((movie) => movie.isRented);
+    return movies
+      .filter((movie) => movie.isRented)
+      .map((movie) => (
+        <Col>
+          <Movie movieInfo={movie} rentMovie={rentMovie} />
+        </Col>
+      ));
   };
   const displaySearchResult = function () {
     let searchRresult = [];
@@ -30,8 +36,15 @@ export default function Catalog({ movies, rentMovie, budget }) {
     return searchRresult;
   };
   const getUnRentedMovies = function () {
-    return movies.filter((movie) => movie.isRented == false);
+    return movies
+      .filter((movie) => movie.isRented == false)
+      .map((movie) => (
+        <Col>
+          <Movie movieInfo={movie} rentMovie={rentMovie} />
+        </Col>
+      ));
   };
+
   return (
     <div className="Container">
       <div>
@@ -45,33 +58,21 @@ export default function Catalog({ movies, rentMovie, budget }) {
       </div>
 
       {searchInput.length <= 0 ? (
-        <Col>
+        <div>
           <Row>
             {getRentedMovies().length > 0 ? (
               <div className="rentedHeader">Rented : </div>
             ) : (
               <></>
             )}
-            {getRentedMovies().map((movie) => (
-              <Col>
-                <Movie movieInfo={movie} rentMovie={rentMovie} />
-              </Col>
-            ))}
+            {getRentedMovies()}
           </Row>
           <div className="catalogHeader">Catalog :</div>
-          <Row>
-            {getUnRentedMovies().map((movie) => (
-              <Col>
-                <Movie movieInfo={movie} rentMovie={rentMovie} />
-              </Col>
-            ))}
-          </Row>
-        </Col>
+          <Row>{getUnRentedMovies()}</Row>
+        </div>
       ) : (
         <div>
-          <Col>
-            <Row>{displaySearchResult()}</Row>
-          </Col>
+          <Row>{displaySearchResult()}</Row>
         </div>
       )}
     </div>
